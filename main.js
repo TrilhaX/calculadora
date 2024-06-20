@@ -74,13 +74,17 @@ if (calculo === "Soma") {
   var n1 = prompt(`Digite o valor da Base:`);
 
   // Substituir vírgulas por pontos e converter para float
-  n1 = parseInt(n1);
-  
+  n1 = parseFloat(n1); // Converter para número com ponto flutuante
+
   if (!isNaN(n1)) {
-    let RaizQuadrada = Math.sqrt(n1);
-    alert(`A Raiz Quadrada é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
+    if (n1 >= 0) { // Verificar se o número é positivo ou zero
+      let RaizQuadrada = Math.sqrt(n1);
+      alert(`A Raiz Quadrada é: ${RaizQuadrada.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
+    } else {
+      alert("Por favor, digite um número não negativo.");
+    }
   } else {
-    alert("Por favor, digite números válidos.");
+    alert("Por favor, digite um número válido.");
   }
 } else {
   alert("Operação inválida. Por favor, escolha 'Somar' ou 'Subtração'.");
