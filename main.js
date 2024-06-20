@@ -1,7 +1,5 @@
 function somar(n1, n2) {  
   // Verificando se a conversão deu certo (não é NaN)
-  var n1 = prompt(`Digite o valor de n1:`);
-  var n2 = prompt(`Digite o valor de n2:`);
 
   n1 = parseInt(n1);
   n2 = parseInt(n2);
@@ -16,6 +14,8 @@ function somar(n1, n2) {
 
 let calculo = prompt("Digite que tipo de conta queres fazer:");
 if (calculo === "Somar") { // Correção: Adicionar parênteses em torno da condição do if
+  var n1 = prompt(`Digite o valor de n1:`);
+  var n2 = prompt(`Digite o valor de n2:`);
   somar(n1, n2);
 } else {
   alert("Operação inválida. Por favor, escolha 'Somar'.");
