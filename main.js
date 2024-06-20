@@ -28,7 +28,7 @@ if (calculo === "Soma") {
   } else {
     alert("Por favor, digite números válidos.");
   }
-  } else if (calculo === "Multiplicação") {
+} else if (calculo === "Multiplicação") {
   var n1 = prompt(`Digite o valor de n1:`);
   var n2 = prompt(`Digite o valor de n2:`);
 
@@ -42,7 +42,7 @@ if (calculo === "Soma") {
   } else {
     alert("Por favor, digite números válidos.");
   }
-  } else if (calculo === "Divisão") {
+} else if (calculo === "Divisão") {
   var n1 = prompt(`Digite o valor de n1:`);
   var n2 = prompt(`Digite o valor de n2:`);
 
