@@ -1,254 +1,170 @@
-alert("Consegue fazer Soma, Subtração, Multiplicação, Divisão, Potencia, Raiz Quadrada, Raiz Cubica, Raiz, Bhaskara, Fatorial, Duplo Fatorial, Porcentagem, Matriz Inversa e Matriz Quadrada.")
-let calculo = prompt("Digite que tipo de conta queres fazer:");
+// Helper function to parse input numbers
+function parseNumberInput(input) {
+  // Replace commas with dots and convert to float
+  return parseFloat(input.replace(',', '.'));
+}
 
-if (calculo === "Soma") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  var n2 = prompt(`Digite o valor de n2:`);
+// Main calculation logic based on user input
+function performCalculation(operation) {
+  let result;
 
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
-  n2 = parseFloat(n2.replace(',', '.'));
-  
-  if (!isNaN(n1) && !isNaN(n2)) {
-    let soma = n1 + n2;
-    alert(`A soma é: ${soma.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite números válidos.");
-  }
-} else if (calculo === "Subtração") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  var n2 = prompt(`Digite o valor de n2:`);
+  switch(operation) {
+    case "Soma":
+      var n1 = parseNumberInput(prompt(`Digite o valor de n1:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor de n2:`));
+      result = n1 + n2;
+      alert(`A soma é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
+      
+    case "Subtração":
+      var n1 = parseNumberInput(prompt(`Digite o valor de n1:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor de n2:`));
+      result = n1 - n2;
+      alert(`A subtração é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
 
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
-  n2 = parseFloat(n2.replace(',', '.'));
-  
-  if (!isNaN(n1) && !isNaN(n2)) {
-    let sub = n1 - n2;
-    alert(`A Subtração é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite números válidos.");
-  }
-} else if (calculo === "Multiplicação") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  var n2 = prompt(`Digite o valor de n2:`);
+    case "Multiplicação":
+      var n1 = parseNumberInput(prompt(`Digite o valor de n1:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor de n2:`));
+      result = n1 * n2;
+      alert(`A multiplicação é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
 
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
-  n2 = parseFloat(n2.replace(',', '.'));
-  
-  if (!isNaN(n1) && !isNaN(n2)) {
-    let sub = n1 * n2;
-    alert(`A Subtração é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite números válidos.");
-  }
-} else if (calculo === "Divisão") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  var n2 = prompt(`Digite o valor de n2:`);
-
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
-  n2 = parseFloat(n2.replace(',', '.'));
-  
-  if (!isNaN(n1) && !isNaN(n2)) {
-    let sub = n1/n2;
-    alert(`A Subtração é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite números válidos.");
-  }
-} else if (calculo === "Potencia") {
-  var n1 = prompt(`Digite o valor da Base:`);
-  var n2 = prompt(`Digite o valor do Expoente:`);
-
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
-  n2 = parseFloat(n2.replace(',', '.'));
-  
-  if (!isNaN(n1) && !isNaN(n2)) {
-    let sub = n1 ** n2;
-    alert(`A Potencia é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite números válidos.");
-  }
-} else if (calculo === "Raiz Quadrada") {
-  var n1 = prompt(`Digite o valor da Base:`);
-
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-
-  if (!isNaN(n1)) {
-    if (n1 >= 0) { // Verificar se o número é positivo ou zero
-      let RaizQuadrada = Math.sqrt(n1);
-      alert(`A Raiz Quadrada é: ${RaizQuadrada.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-    } else {
-      alert("Por favor, digite um número não negativo.");
-    }
-  } else {
-    alert("Por favor, digite um número válido.");
-  }
-} else if (calculo === "Raiz Cubica") {
-  var n1 = prompt(`Digite o valor da Base:`);
-
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-
-  if (!isNaN(n1)) {
-    if (n1 >= 0) { // Verificar se o número é positivo ou zero
-      let RaizCubica = Math.cbrt(n1);
-      alert(`A Raiz Cubica é: ${RaizCubica.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-    } else {
-      alert("Por favor, digite um número não negativo.");
-    }
-  } else {
-    alert("Por favor, digite um número válido.");
-  }
-} else if (calculo === "Raiz") {
-  var n1 = prompt(`Digite o valor da Base:`);
-  var n2 = prompt(`Digite o valor da indice:`);
-
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-
-  if (!isNaN(n1)) {
-    if (n1 >= 0) { // Verificar se o número é positivo ou zero
-      let Raiz = 1/n2
-      let RaizAleatoria = Math.pow(n1, Raiz);
-      alert(`A Raiz é: ${RaizAleatoria.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-    } else {
-      alert("Por favor, digite um número não negativo.");
-    }
-  } else {
-    alert("Por favor, digite um número válido.");
-  }
-} else if (calculo === "Bhaskara") {
-  var n1 = prompt(`Digite o valor de A:`);
-  var n2 = prompt(`Digite o valor de B:`);
-  var n3 = prompt(`Digite o valor de C:`);
-  // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-  n2 = parseFloat(n2); // Converter para número com ponto flutuante
-  n3 = parseFloat(n3); // Converter para número com ponto flutuante
-
-  if (!isNaN(n1) && !isNaN(n2) && !isNaN(n3)) {
-      let delta = n2 * n2 - 4 * n1 * n3
-      let x1 = (-n2 + Math.sqrt(delta))/ 2 * n1
-      let x2 = (-n2 - Math.sqrt(delta))/ 2 * n1
-      alert(`O X1 é ${x1.toFixed(2).replace('.', ',')} e o X2 é ${x2.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
-  } else {
-    alert("Por favor, digite um número válido.");
-  }  
-} else if (calculo === "Fatorial") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-
-  if (!isNaN(n1)) {
-    // Definição da função fatorial
-    function fatorial(n) {
-      if (n === 0 || n === 1) {
-        return 1;
+    case "Divisão":
+      var n1 = parseNumberInput(prompt(`Digite o valor de n1:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor de n2:`));
+      if (n2 !== 0) {
+        result = n1 / n2;
+        alert(`A divisão é: ${result.toFixed(2).replace('.', ',')}`);
+      } else {
+        alert("Não é possível dividir por zero.");
       }
-      return n * fatorial(n - 1);
-    }
+      break;
 
-    let resultadoFatorial = fatorial(n1);
-    alert(`O Fatorial de ${n1} é ${resultadoFatorial}`);
-  } else {
-    alert("Por favor, digite um número válido.");
-  }
-} else if (calculo === "Duplo Fatorial") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
+    case "Potencia":
+      var n1 = parseNumberInput(prompt(`Digite o valor da Base:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor do Expoente:`));
+      result = Math.pow(n1, n2);
+      alert(`A potência é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
 
-  if (!isNaN(n1) && !(n1 < 0) ) {
-    function fatorial(n) {
-      if (n === 0 || n === 1) {
-        return 1;
+    case "Raiz Quadrada":
+      var n1 = parseNumberInput(prompt(`Digite o valor:`));
+      if (n1 >= 0) {
+        result = Math.sqrt(n1);
+        alert(`A raiz quadrada é: ${result.toFixed(2).replace('.', ',')}`);
+      } else {
+        alert("Por favor, digite um número não negativo.");
       }
-      return n * fatorial(n - 2);
-    }
+      break;
 
-    let resultadoFatorial = fatorial(n1);
-    alert(`O Duplo Fatorial de ${n1} é ${resultadoFatorial}`);
-  } else {
-    alert("Por favor, digite um número válido.");
+    case "Raiz Cubica":
+      var n1 = parseNumberInput(prompt(`Digite o valor:`));
+      result = Math.cbrt(n1);
+      alert(`A raiz cúbica é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
+
+    case "Raiz":
+      var n1 = parseNumberInput(prompt(`Digite o valor da Base:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor do Índice:`));
+      result = Math.pow(n1, 1/n2);
+      alert(`A raiz é: ${result.toFixed(2).replace('.', ',')}`);
+      break;
+
+    case "Bhaskara":
+      var n1 = parseNumberInput(prompt(`Digite o valor de A:`));
+      var n2 = parseNumberInput(prompt(`Digite o valor de B:`));
+      var n3 = parseNumberInput(prompt(`Digite o valor de C:`));
+      var delta = n2 * n2 - 4 * n1 * n3;
+      if (delta > 0) {
+        var x1 = (-n2 + Math.sqrt(delta)) / (2 * n1);
+        var x2 = (-n2 - Math.sqrt(delta)) / (2 * n1);
+        alert(`As raízes são: X1 = ${x1.toFixed(2).replace('.', ',')} e X2 = ${x2.toFixed(2).replace('.', ',')}`);
+      } else if (delta === 0) {
+        var x = -n2 / (2 * n1);
+        alert(`A raiz dupla é: X = ${x.toFixed(2).replace('.', ',')}`);
+      } else {
+        alert("A equação não possui raízes reais.");
+      }
+      break;
+
+    case "Fatorial":
+      var n1 = parseInt(prompt(`Digite o valor de n1:`));
+      if (!isNaN(n1) && n1 >= 0) {
+        function fatorial(n) {
+          return (n !== 1 && n !== 0) ? n * fatorial(n - 1) : 1;
+        }
+        result = fatorial(n1);
+        alert(`O fatorial de ${n1} é: ${result}`);
+      } else {
+        alert("Por favor, digite um número inteiro não negativo.");
+      }
+      break;
+
+    case "Duplo Fatorial":
+      var n1 = parseInt(prompt(`Digite o valor de n1:`));
+      if (!isNaN(n1) && n1 >= 0) {
+        function duploFatorial(n) {
+          return (n > 1) ? n * duploFatorial(n - 2) : 1;
+        }
+        result = duploFatorial(n1);
+        alert(`O duplo fatorial de ${n1} é: ${result}`);
+      } else {
+        alert("Por favor, digite um número inteiro não negativo.");
+      }
+      break;
+
+    case "Porcentagem":
+      var n1 = parseNumberInput(prompt(`Digite o valor:`));
+      var porcentagem = parseNumberInput(prompt(`Digite a porcentagem:`));
+      if (!isNaN(n1)) {
+        result = (n1 * porcentagem) / 100;
+        alert(`${porcentagem.toFixed(2).replace('.', ',')}% de ${n1.toFixed(2).replace('.', ',')} é ${result.toFixed(2).replace('.', ',')}`);
+      } else {
+        alert("Por favor, digite um número válido.");
+      }
+      break;
+
+    case "Matriz Inversa":
+      var aN = parseNumberInput(prompt(`Digite o valor de A:`));
+      var bN = parseNumberInput(prompt(`Digite o valor de B:`));
+      var cN = parseNumberInput(prompt(`Digite o valor de C:`));
+      var dN = parseNumberInput(prompt(`Digite o valor de D:`));
+      var determinante = aN * dN - bN * cN;
+      if (determinante !== 0) {
+        var aI = dN / determinante;
+        var bI = -bN / determinante;
+        var cI = -cN / determinante;
+        var dI = aN / determinante;
+        alert(`A matriz inversa é:
+        ${aI.toFixed(2).replace('.', ',')} ${bI.toFixed(2).replace('.', ',')}
+        ${cI.toFixed(2).replace('.', ',')} ${dI.toFixed(2).replace('.', ',')}`);
+      } else {
+        alert("A matriz não possui inversa, pois o determinante é zero.");
+      }
+      break;
+
+    case "Matriz Quadrada":
+      var aN = parseNumberInput(prompt(`Digite o valor de A:`));
+      var bN = parseNumberInput(prompt(`Digite o valor de B:`));
+      var cN = parseNumberInput(prompt(`Digite o valor de C:`));
+      var dN = parseNumberInput(prompt(`Digite o valor de D:`));
+      alert(`A matriz quadrada é:
+      ${aN.toFixed(2).replace('.', ',')} ${bN.toFixed(2).replace('.', ',')}
+      ${cN.toFixed(2).replace('.', ',')} ${dN.toFixed(2).replace('.', ',')}`);
+      break;
+
+    default:
+      alert("Operação inválida. Por favor, escolha uma operação válida.");
   }
-} else if (calculo === "Porcentagem") {
-  var n1 = prompt(`Digite o valor de n1:`);
-  var porcentagem = prompt(`Digite o valor da porcentagem: `)
-  n1 = parseFloat(n1); // Converter para número com ponto flutuante
-  porcentagem = parseFloat(porcentagem); // Converter para número com ponto flutuante
+}
 
-  if (!isNaN(n1)){
-    if (n1 == 0){
-      alert(`${porcentagem.toFixed(2).replace('.', ',')}% de ${n1.toFixed(2).replace('.', ',')} não existe`)
-    }else{
-      let resultado = n1 * (porcentagem/100);
-      alert(`${porcentagem.toFixed(2).replace('.', ',')}% de ${n1.toFixed(2).replace('.', ',')} é ${resultado}`);
-    }
-  }else {
-    alert("Por favor, digite um número válido.");
-  }
-} else if (calculo === "Matriz Inversa") {
-  var aN = prompt(`Digite o valor de A da Matriz Normal:`);
-  var bN = prompt(`Digite o valor de B da Matriz Normal:`);
-  var cN = prompt(`Digite o valor de C da Matriz Normal:`);
-  var dN = prompt(`Digite o valor de D da Matriz Normal:`);
+// Prompt user for desired calculation
+let calculo = prompt("Digite que tipo de conta você quer fazer:");
 
-  // Converter para números com ponto flutuante
-  aN = parseFloat(aN);
-  bN = parseFloat(bN);
-  cN = parseFloat(cN);
-  dN = parseFloat(dN);
-
-  // Verificar se os valores inseridos são números válidos
-  if (!isNaN(aN) && !isNaN(bN) && !isNaN(cN) && !isNaN(dN)) {
-    // Calcular o determinante da matriz normal
-    var determinante = aN * dN - bN * cN;
-
-    // Verificar se o determinante é diferente de zero para ter inversa
-    if (determinante !== 0) {
-      // Calcular a matriz inversa
-      var aI = dN / determinante;
-      var bI = -bN / determinante;
-      var cI = -cN / determinante;
-      var dI = aN / determinante;
-
-      // Exibir a matriz inversa
-      alert(`A Matriz Inversa é ${aI} ${bI}
-                                ${cI} ${dI}`);
-    } else {
-      alert("A matriz normal não possui inversa, pois o determinante é zero.");
-    }
-  } else {
-    alert("Por favor, digite um número válido para os valores da matriz.");
-  }
-} else if (calculo === "Matriz Quadrada") {
-  var aN = prompt(`Digite o valor de A da Matriz Normal:`);
-  var bN = prompt(`Digite o valor de B da Matriz Normal:`);
-  var cN = prompt(`Digite o valor de C da Matriz Normal:`);
-  var dN = prompt(`Digite o valor de D da Matriz Normal:`);
-
-  // Converter para números com ponto flutuante
-  aN = parseFloat(aN);
-  bN = parseFloat(bN);
-  cN = parseFloat(cN);
-  dN = parseFloat(dN);
-
-  // Verificar se os valores inseridos são números válidos
-  if (!isNaN(aN) && !isNaN(bN) && !isNaN(cN) && !isNaN(dN)) {
-    // Calcular o determinante da matriz normal
-    var mqA = aN * aN
-    var mqB = bN * bN
-    var mqC = cN * cN
-    var mqD + dN * dN
-
-      // Exibir a matriz inversa
-      alert(`A Matriz Quadrada é ${aN} ${bN}
-                                ${cN} ${dN}`);
-  } else {
-    alert("Por favor, digite um número válido para os valores da matriz.");
-  }
+// Perform calculation based on user input
+if (calculo !== null) {
+  performCalculation(calculo);
 } else {
-  alert("Operação inválida. Por favor, escolha 'Somar' ou 'Subtração'.");
+  alert("Operação cancelada.");
 }
