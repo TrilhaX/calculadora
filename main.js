@@ -168,6 +168,9 @@ function performCalculation(operation) {
   }
 }
 
+// Prompt para mostrar os tipos de cálculos antes de pedir a operação desejada
+alert("Bem-vindo à calculadora!");
+
 // Função para mostrar os tipos de cálculos disponíveis
 function mostrarTiposDeCalculo() {
   alert(`Tipos de cálculos disponíveis:
@@ -187,9 +190,6 @@ function mostrarTiposDeCalculo() {
   - Matriz Quadrada`);
 }
 
-// Prompt para mostrar os tipos de cálculos antes de pedir a operação desejada
-alert("Bem-vindo à calculadora!");
-
 // Mostra os tipos de cálculos disponíveis
 mostrarTiposDeCalculo();
 
@@ -202,4 +202,3 @@ if (calculo !== null) {
 } else {
   alert("Operação cancelada.");
 }
-
