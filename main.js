@@ -173,7 +173,7 @@ alert("Bem-vindo à calculadora!");
 
 // Função para mostrar os tipos de cálculos disponíveis
 function mostrarTiposDeCalculo() {
-  alert(`Tipos de cálculos disponíveis:
+  let tipos = prompt(`Tipos de cálculos disponíveis(digite ok para continuas):
   - Soma
   - Subtração
   - Multiplicação
