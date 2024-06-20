@@ -1,3 +1,4 @@
+alert("Consegue fazer Soma, Subtração, Multiplicação, Divisão, Potencia, Raiz Quadrada, Raiz Cubica, Raiz, Bhaskara, Fatorial, Duplo Fatorial, Porcentagem, Matriz Inversa e Matriz Quadrada.")
 let calculo = prompt("Digite que tipo de conta queres fazer:");
 
 if (calculo === "Soma") {
@@ -219,6 +220,32 @@ if (calculo === "Soma") {
     } else {
       alert("A matriz normal não possui inversa, pois o determinante é zero.");
     }
+  } else {
+    alert("Por favor, digite um número válido para os valores da matriz.");
+  }
+} else if (calculo === "Matriz Quadrada") {
+  var aN = prompt(`Digite o valor de A da Matriz Normal:`);
+  var bN = prompt(`Digite o valor de B da Matriz Normal:`);
+  var cN = prompt(`Digite o valor de C da Matriz Normal:`);
+  var dN = prompt(`Digite o valor de D da Matriz Normal:`);
+
+  // Converter para números com ponto flutuante
+  aN = parseFloat(aN);
+  bN = parseFloat(bN);
+  cN = parseFloat(cN);
+  dN = parseFloat(dN);
+
+  // Verificar se os valores inseridos são números válidos
+  if (!isNaN(aN) && !isNaN(bN) && !isNaN(cN) && !isNaN(dN)) {
+    // Calcular o determinante da matriz normal
+    var mqA = aN * aN
+    var mqB = bN * bN
+    var mqC = cN * cN
+    var mqD + dN * dN
+
+      // Exibir a matriz inversa
+      alert(`A Matriz Quadrada é ${aN} ${bN}
+                                ${cN} ${dN}`);
   } else {
     alert("Por favor, digite um número válido para os valores da matriz.");
   }
