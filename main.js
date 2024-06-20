@@ -172,8 +172,7 @@ function performCalculation(operation) {
 alert("Bem-vindo à calculadora!");
 
 // Função para mostrar os tipos de cálculos disponíveis
-function mostrarTiposDeCalculo() {
-  let tipos = prompt(`Tipos de cálculos disponíveis(digite ok para continuas):
+let tipos = prompt(`Tipos de cálculos disponíveis(digite ok para continuas):
   - Soma
   - Subtração
   - Multiplicação
@@ -188,10 +187,6 @@ function mostrarTiposDeCalculo() {
   - Porcentagem
   - Matriz Inversa
   - Matriz Quadrada`);
-}
-
-// Mostra os tipos de cálculos disponíveis
-mostrarTiposDeCalculo();
 
 // Prompt para receber a operação desejada
 let calculo = prompt("Digite qual cálculo você deseja realizar:");
