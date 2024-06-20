@@ -74,9 +74,9 @@ if (calculo === "Soma") {
   var n1 = prompt(`Digite o valor da Base:`);
 
   // Substituir vírgulas por pontos e converter para float
-  n1 = parseFloat(n1.replace(',', '.'));
+  n1 = parseInt(n1);
   
-  if (!isNaN(n1) && !isNaN(n2)) {
+  if (!isNaN(n1)) {
     let RaizQuadrada = Math.sqrt(n1);
     alert(`A Raiz Quadrada é: ${sub.toFixed(2).replace('.', ',')}`); // Formatar saída com vírgula
   } else {
