@@ -149,9 +149,15 @@ function performCalculation(operation) {
       var bN = parseNumberInput(prompt(`Digite o valor de B:`));
       var cN = parseNumberInput(prompt(`Digite o valor de C:`));
       var dN = parseNumberInput(prompt(`Digite o valor de D:`));
+
+      var aq = aN * aN
+      var bq = bN * bN
+      var cq = cN * cN
+      var dq = dN * dN
+        
       alert(`A matriz quadrada é:
-      ${aN.toFixed(2).replace('.', ',')} ${bN.toFixed(2).replace('.', ',')}
-      ${cN.toFixed(2).replace('.', ',')} ${dN.toFixed(2).replace('.', ',')}`);
+      ${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}
+      ${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`);
       break;
 
     default:
