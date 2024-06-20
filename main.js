@@ -12,7 +12,7 @@ if (calculo === "Somar") {
   } else {
     alert("Por favor, digite números válidos.");
   }
-  if (calculo === "Subtração") {
+  else if (calculo === "Subtração") {
   var n1 = prompt(`Digite o valor de n1:`);
   var n2 = prompt(`Digite o valor de n2:`);
 
