@@ -215,7 +215,7 @@ if (calculo === "Soma") {
 
       // Exibir a matriz inversa
       alert(`A Matriz Inversa é ${aI} ${bI}
-               ${cI} ${dI}`);
+                                ${cI} ${dI}`);
     } else {
       alert("A matriz normal não possui inversa, pois o determinante é zero.");
     }
