@@ -188,6 +188,40 @@ if (calculo === "Soma") {
   }else {
     alert("Por favor, digite um número válido.");
   }
+} else if (calculo === "Matriz Inversa") {
+  var aN = prompt(`Digite o valor de A da Matriz Normal:`);
+  var bN = prompt(`Digite o valor de B da Matriz Normal:`);
+  var cN = prompt(`Digite o valor de C da Matriz Normal:`);
+  var dN = prompt(`Digite o valor de D da Matriz Normal:`);
+
+  // Converter para números com ponto flutuante
+  aN = parseFloat(aN);
+  bN = parseFloat(bN);
+  cN = parseFloat(cN);
+  dN = parseFloat(dN);
+
+  // Verificar se os valores inseridos são números válidos
+  if (!isNaN(aN) && !isNaN(bN) && !isNaN(cN) && !isNaN(dN)) {
+    // Calcular o determinante da matriz normal
+    var determinante = aN * dN - bN * cN;
+
+    // Verificar se o determinante é diferente de zero para ter inversa
+    if (determinante !== 0) {
+      // Calcular a matriz inversa
+      var aI = dN / determinante;
+      var bI = -bN / determinante;
+      var cI = -cN / determinante;
+      var dI = aN / determinante;
+
+      // Exibir a matriz inversa
+      alert(`A Matriz Inversa é ${aI} ${bI}
+               ${cI} ${dI}`);
+    } else {
+      alert("A matriz normal não possui inversa, pois o determinante é zero.");
+    }
+  } else {
+    alert("Por favor, digite um número válido para os valores da matriz.");
+  }
 } else {
   alert("Operação inválida. Por favor, escolha 'Somar' ou 'Subtração'.");
 }
