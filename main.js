@@ -168,12 +168,38 @@ function performCalculation(operation) {
   }
 }
 
-// Prompt user for desired calculation
-let calculo = prompt("Digite que tipo de conta você quer fazer:");
+// Função para mostrar os tipos de cálculos disponíveis
+function mostrarTiposDeCalculo() {
+  alert(`Tipos de cálculos disponíveis:
+  - Soma
+  - Subtração
+  - Multiplicação
+  - Divisão
+  - Potencia
+  - Raiz Quadrada
+  - Raiz Cubica
+  - Raiz
+  - Bhaskara
+  - Fatorial
+  - Duplo Fatorial
+  - Porcentagem
+  - Matriz Inversa
+  - Matriz Quadrada`);
+}
 
-// Perform calculation based on user input
+// Prompt para mostrar os tipos de cálculos antes de pedir a operação desejada
+alert("Bem-vindo à calculadora!");
+
+// Mostra os tipos de cálculos disponíveis
+mostrarTiposDeCalculo();
+
+// Prompt para receber a operação desejada
+let calculo = prompt("Digite qual cálculo você deseja realizar:");
+
+// Realiza o cálculo baseado na entrada do usuário
 if (calculo !== null) {
   performCalculation(calculo);
 } else {
   alert("Operação cancelada.");
 }
+
