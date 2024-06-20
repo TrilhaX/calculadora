@@ -4,8 +4,8 @@ if (calculo === "Somar") {
   var n1 = prompt(`Digite o valor de n1:`);
   var n2 = prompt(`Digite o valor de n2:`);
 
-  n1 = parseFloat(n1);
-  n2 = parseFloat(n2);
+  n1 = parseFloat(n1.replace(',', '.'));
+  n2 = parseFloat(n2.replace(',', '.'));
   
   if (!isNaN(n1) && !isNaN(n2)) {
     let soma = n1 + n2;
@@ -17,8 +17,8 @@ if (calculo === "Somar") {
   var n1 = prompt(`Digite o valor de n1:`);
   var n2 = prompt(`Digite o valor de n2:`);
 
-  n1 = parseInt(n1);
-  n2 = parseInt(n2);
+  n1 = parseFloat(n1.replace(',', '.'));
+  n2 = parseFloat(n2.replace(',', '.'));
   
   if (!isNaN(n1) && !isNaN(n2)) {
     let sub = n1 - n2;
