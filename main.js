@@ -144,28 +144,27 @@ function performCalculation(operation) {
       }
       break;
 
-switch (operacao) {
-  case "Matriz Quadrada":
-    var aN = parseNumberInput(prompt(`Digite o valor de A:`));
-    var bN = parseNumberInput(prompt(`Digite o valor de B:`));
-    var cN = parseNumberInput(prompt(`Digite o valor de C:`));
-    var dN = parseNumberInput(prompt(`Digite o valor de D:`));
+    case "Matriz Quadrada":
+      var aN = parseNumberInput(prompt(`Digite o valor de A:`));
+      var bN = parseNumberInput(prompt(`Digite o valor de B:`));
+      var cN = parseNumberInput(prompt(`Digite o valor de C:`));
+      var dN = parseNumberInput(prompt(`Digite o valor de D:`));
 
-    var aq = aN * aN;
-    var bq = bN * bN;
-    var cq = cN * cN;
-    var dq = dN * dN;
+      var aq = aN * aN;
+      var bq = bN * bN;
+      var cq = cN * cN;
+      var dq = dN * dN;
 
-    var resultado = `A matriz quadrada é:\n${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}\n${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`;
-    break;
+      result = `A matriz quadrada é:\n${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}\n${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`;
+      break;
 
     default:
       alert("Operação inválida. Por favor, escolha uma operação válida.");
   }
 
   // Agora exibimos o resultado fora do switch, apenas se a operação for válida
-  if (resultado) {
-    alert(resultado);
+  if (result) {
+    alert(result);
   }
 }
 
