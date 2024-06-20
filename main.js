@@ -172,7 +172,7 @@ function performCalculation(operation) {
 alert("Bem-vindo à calculadora!");
 
 // Função para mostrar os tipos de cálculos disponíveis
-let tipos = prompt(`Tipos de cálculos disponíveis(digite ok para continuas):
+alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Soma
   - Subtração
   - Multiplicação
