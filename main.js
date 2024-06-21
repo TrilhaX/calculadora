@@ -40,6 +40,18 @@ function performCalculation(operation) {
         alert("Não é possível dividir por zero.");
       }
       break;
+    case "Media":
+      var d = parseInt(prompt("Digite a quantidade de numeros que voce vai fazer a media: "))
+      let numeros = []
+        
+      for (let i = 0; i < d; i++){
+        let numero = parseFloat(prompt(`Digite o numero ${i + 1}: `));
+        numeros.push(numero)
+      }
+        let soma = numeros.reduce((acc, val) => acc + val, 0)
+        result = soma/ d;
+        alert(`A Media é: ${result.toFixed(2).replace('.', ',')}`);
+        break;
 
     case "Potencia":
       var n1 = parseNumberInput(prompt(`Digite o valor da Base:`));
@@ -87,6 +99,19 @@ function performCalculation(operation) {
         alert("A equação não possui raízes reais.");
       }
       break;
+    case "Hipotenusa":
+        var n1 = parseNumberInput(prompt(`Digite o valor do Cateto A:`));
+        var n2 = parseNumberInput(prompt(`Digite o valor do Cateto B:`));
+
+        var catetoA = Math.pow(n1, 2);
+        var catetoB = Math.pow(n2, 2);
+
+        var somadoscatestos = catetoA + catetoB
+
+        var hipotenusa = Math.sqrt(somadoscatestos)
+
+        alert(`A sua Hipotenusa é: ${hipotenusa}`);
+        break;
 
     case "Fatorial":
       var n1 = parseInt(prompt(`Digite o valor de n1:`));
@@ -124,7 +149,50 @@ function performCalculation(operation) {
         alert("Por favor, digite um número válido.");
       }
       break;
+    case "Logaritmo":
+        var b = parseNumberInput(prompt(`Digite o valor da Base: `));
+        var Logaritmando = parseNumberInput(prompt(`Digite o valor do Logaritmando: `));
+    
+        var log = Math.log(Logaritmando) / Math.log(b)
+        result = `O seu log é:\n${log.toFixed(2).replace('.', ',')}`;
+        break;
+    case "Soma De Matriz":
+        var a1 = parseNumberInput(prompt(`Digite o valor de A da matriz 1:`));
+        var b1 = parseNumberInput(prompt(`Digite o valor de B da matriz 1:`));
+        var c1 = parseNumberInput(prompt(`Digite o valor de C da matriz 1:`));
+        var d1 = parseNumberInput(prompt(`Digite o valor de D da matriz 1:`));
+  
+        var a2 = parseNumberInput(prompt(`Digite o valor de A da matriz 2:`));
+        var b2 = parseNumberInput(prompt(`Digite o valor de B da matriz 2:`));
+        var c2 = parseNumberInput(prompt(`Digite o valor de C da matriz 2:`));
+        var d2 = parseNumberInput(prompt(`Digite o valor de D da matriz 2:`));
+    
+        var aR = a1 + a2;
+        var bR = b1 + b2;
+        var cR = c1 + c2;
+        var dR = d1 + d2;
+    
+        result = `A multiplicação de Matriz é:\n${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}\n${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+        break;
+    case "Multiplicação De Matriz":
+      var a1 = parseNumberInput(prompt(`Digite o valor de A da matriz 1:`));
+      var b1 = parseNumberInput(prompt(`Digite o valor de B da matriz 1:`));
+      var c1 = parseNumberInput(prompt(`Digite o valor de C da matriz 1:`));
+      var d1 = parseNumberInput(prompt(`Digite o valor de D da matriz 1:`));
 
+      var a2 = parseNumberInput(prompt(`Digite o valor de A da matriz 2:`));
+      var b2 = parseNumberInput(prompt(`Digite o valor de B da matriz 2:`));
+      var c2 = parseNumberInput(prompt(`Digite o valor de C da matriz 2:`));
+      var d2 = parseNumberInput(prompt(`Digite o valor de D da matriz 2:`));
+  
+      var aR = a1 * a2 + b1 * c2;
+      var bR = a1 * b2 + b1 * d2;
+      var cR = c1 * a2 + d1 * c2;
+      var dR = c1 * b2 + d1 * d2;
+  
+      result = `A multiplicação de Matriz é:\n${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}\n${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
+      break;
+  
     case "Matriz Inversa":
       var aN = parseNumberInput(prompt(`Digite o valor de A:`));
       var bN = parseNumberInput(prompt(`Digite o valor de B:`));
@@ -150,10 +218,10 @@ function performCalculation(operation) {
       var cN = parseNumberInput(prompt(`Digite o valor de C:`));
       var dN = parseNumberInput(prompt(`Digite o valor de D:`));
 
-      var aq = aN * aN;
-      var bq = bN * bN;
-      var cq = cN * cN;
-      var dq = dN * dN;
+      var aq = aN * aN + bN * cN;
+      var bq = aN * bN + bN * dN;
+      var cq = cN * aN + dN * cN;
+      var dq = cN * bN + dN * dN;
 
       result = `A matriz quadrada é:\n${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}\n${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`;
       break;
@@ -177,14 +245,19 @@ alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Subtração
   - Multiplicação
   - Divisão
+  - Media
   - Potencia
   - Raiz Quadrada
   - Raiz Cubica
   - Raiz
   - Bhaskara
+  - Hipotenusa
   - Fatorial
   - Duplo Fatorial
   - Porcentagem
+  - Logaritmo
+  - Soma de Matriz
+  - Multiplicação De Matriz
   - Matriz Inversa
   - Matriz Quadrada`);
 
