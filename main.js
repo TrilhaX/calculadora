@@ -256,7 +256,7 @@ alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Duplo Fatorial
   - Porcentagem
   - Logaritmo
-  - Soma de Matriz
+  - Soma De Matriz
   - Multiplicação De Matriz
   - Matriz Inversa
   - Matriz Quadrada`);
