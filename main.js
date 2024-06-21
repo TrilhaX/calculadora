@@ -192,6 +192,35 @@ function performCalculation(operation) {
   
       result = `A multiplicação de Matriz é:\n${aR.toFixed(2).replace('.', ',')} ${bR.toFixed(2).replace('.', ',')}\n${cR.toFixed(2).replace('.', ',')} ${dR.toFixed(2).replace('.', ',')}`;
       break;
+    case "Corrente":
+        var volts = prompt("Digite o numero de volts: ");
+        var resistencia = prompt("Digite o numero de resistencia: ");
+        var corrente = volts/resistencia;
+          alert(`O Corrente é:
+          ${corrente.toFixed(2).replace('.', ',')}`);
+        break;
+
+    case "Volts":
+        var resistencia = prompt("Digite o numero de resistencia: ");
+        var corrente = prompt("Digite o numero de corrente: ");
+        var volts = resistencia * corrente;
+          alert(`O Volts é:
+          ${volts.toFixed(2).replace('.', ',')}`);
+        break;
+    case "Resistencia":
+        var Volts = prompt("Digite o numero de Volts: ");
+        var corrente = prompt("Digite o numero de corrente: ");
+        var resistencia = resistencia/corrente;
+            alert(`O Resistencia é:
+            ${resistencia.toFixed(2).replace('.', ',')}`);
+        break;
+    case "Resistencia Total (Numeros Iguais)":
+        var Resistencia = prompt("Digite o numero de Resistencia: ");
+        var Numero = prompt("Digite o numero de Resistor: ");
+        var resistenciatotal = resistencia * Numero;
+            alert(`O Resistencia é:
+            ${resistencia.toFixed(2).replace('.', ',')}`);
+        break;
   
     case "Matriz Inversa":
       var aN = parseNumberInput(prompt(`Digite o valor de A:`));
@@ -258,6 +287,10 @@ alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Logaritmo
   - Soma De Matriz
   - Multiplicação De Matriz
+  - Corrente
+  - Volts
+  - Resistencia
+  - Resistencia Total (Numeros Iguais)
   - Matriz Inversa
   - Matriz Quadrada`);
 
