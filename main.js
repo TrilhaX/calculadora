@@ -255,9 +255,39 @@ function performCalculation(operation) {
       result = `A matriz quadrada é:\n${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}\n${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`;
       break;
 
+    case "Sistema Linear":
+    var Types = prompt(`Digite o tipo da matriz (2x2 or 3x3): `);
+
+    if (Types === "2x2") {
+        var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
+        var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
+        var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
+        var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
+
+        var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
+        var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
+
+        var determinante = a1 * a4 - a2 * a3;
+        var Dx = (r1 * a4 - r2 * a2)/determinante;
+        var Dy = (a1 * r2 - a3 * r1)/determinante;
+
+        result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}`;
+    } else {
+        alert("Matriz não suportada. Por favor, insira uma matriz 2x2.");
+    }
+    break;
+
+    case "Expressão":
+      var expressao = prompt("Escreva uma expressão");
+      var resultado = eval(expressao);
+      alert("Resultado da expressão: " + resultado);
+    break;
+
     default:
       alert("Operação inválida. Por favor, escolha uma operação válida.");
   }
+
+  
 
   // Agora exibimos o resultado fora do switch, apenas se a operação for válida
   if (result) {
@@ -270,10 +300,7 @@ alert("Bem-vindo à calculadora!");
 
 // Função para mostrar os tipos de cálculos disponíveis
 alert(`Tipos de cálculos disponíveis(digite ok para continuar):
-  - Soma
-  - Subtração
-  - Multiplicação
-  - Divisão
+  - Expressão
   - Media
   - Potencia
   - Raiz Quadrada
@@ -292,7 +319,9 @@ alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Resistencia
   - Resistencia Total (Numeros Iguais)
   - Matriz Inversa
-  - Matriz Quadrada`);
+  - Matriz Quadrada
+  - Sistema Linear
+  `);
 
 // Prompt para receber a operação desejada
 let calculo = prompt("Digite qual cálculo você deseja realizar:");
