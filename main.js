@@ -243,9 +243,9 @@ function performCalculation(operation) {
       }
       break;
 
-      case "21": // Sequencia de Cores
+    case "21": // Sequencia de Cores
       var pergunta = prompt("Quer Descobrir as Cores?(s/n): ")
-
+    
       let tabelaCores = {
         Faixa1: {
             0: 'Preto',
@@ -292,31 +292,31 @@ function performCalculation(operation) {
             5: 'Cinza',
             10: 'Prateado'
         }
-    };
-
-    // Função para obter o nome da cor com base no tipo (faixa 1, faixa 2, multiplicador, tolerância) e o valor escolhido
-    function getCor(tipo, valor) {
-        if (tabelaCores[tipo] && tabelaCores[tipo][valor] !== undefined) {
-            return tabelaCores[tipo][valor];
-        }
-        return "Cor não encontrada";
-    }
-
-    if (pergunta === "s"){
-        var faixa1 = parseNumberInput(prompt('Digite o Valor Da Faixa 1 (Convertido): '));
-        var faixa2 = parseNumberInput(prompt('Digite o Valor Da Faixa 2 (Convertido): '));
-        var multiplicador = parseNumberInput(prompt('Digite o Valor Do Multiplicador: '));
-        var tolerancia = parseNumberInput(prompt('Digite o Valor Da Tolerancia: '));
-  
-      // Obter o nome das cores com base nas escolhas do usuário
-      let corFaixa1 = getCor('Faixa1', faixa1);
-      let corFaixa2 = getCor('Faixa2', faixa2);
-      let corMultiplicador = getCor('Multiplicador', multiplicador);
-      let corTolerancia = getCor('Tolerancia', tolerancia);
-  
-      // Mostrar as escolhas feitas pelo usuário
-      alert(`Faixa 1: ${corFaixa1}\nFaixa 2: ${corFaixa2}\nMultiplicador: ${corMultiplicador}\nTolerância: ${corTolerancia}`);
-      }else {
+      };
+    
+      // Função para obter o nome da cor com base no tipo (faixa 1, faixa 2, multiplicador, tolerância) e o valor escolhido
+      function getCor(tipo, valor) {
+          if (tabelaCores[tipo] && tabelaCores[tipo][valor] !== undefined) {
+              return tabelaCores[tipo][valor];
+          }
+          return "Cor não encontrada";
+      }
+    
+      if (pergunta === "s") {
+          var faixa1 = parseNumberInput(prompt('Digite o Valor Da Faixa 1 (Convertido): '));
+          var faixa2 = parseNumberInput(prompt('Digite o Valor Da Faixa 2 (Convertido): '));
+          var multiplicador = parseNumberInput(prompt('Digite o Valor Do Multiplicador: '));
+          var tolerancia = parseNumberInput(prompt('Digite o Valor Da Tolerancia: '));
+    
+        // Obter o nome das cores com base nas escolhas do usuário
+        let corFaixa1 = getCor('Faixa1', faixa1);
+        let corFaixa2 = getCor('Faixa2', faixa2);
+        let corMultiplicador = getCor('Multiplicador', multiplicador);
+        let corTolerancia = getCor('Tolerancia', tolerancia);
+    
+        // Mostrar as escolhas feitas pelo usuário
+        alert(`Faixa 1: ${corFaixa1}\nFaixa 2: ${corFaixa2}\nMultiplicador: ${corMultiplicador}\nTolerância: ${corTolerancia}`);
+      } else {
         // Função para obter o valor numérico a partir do nome da cor
         function getValorPorCor(tipo, cor) {
             for (let chave in tabelaCores[tipo]) {
@@ -361,7 +361,8 @@ function performCalculation(operation) {
     
         // Exibir os resultados formatados
         alert(`Valor Nominal: ${formatarValor(valorNominal)}\nValor Máximo: ${formatarValor(valorMaximo)}\nValor Mínimo: ${formatarValor(valorMinimo)}`);
-    }    
+      }
+    break;      
 
     case "22": //Conversão
     var a = prompt(`Digite o Tipo de Unidade:`);
@@ -383,22 +384,22 @@ function performCalculation(operation) {
 
     if (a === "Quilo"){
       let mult = (n1 * 1000);
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`);
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`);
     }else if (a === "Mega"){
       let mult = (n1 * 1000000)
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
     }else if (a === "Giga"){
       let mult = (n1 * 1000000000)
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
     }else if (a === "Mili"){
       let mult = (n1 * 0.001)
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
     }else if (a === "Micro"){
       let mult = (n1 * 0.000001)
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
     }else{
       let mult = (n1 * 0.000000001)
-      resultado = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
+      result = alert(`O Valor Convertido é: ${formatarValor(mult)}`)
     }
 
     break;
@@ -412,28 +413,28 @@ function performCalculation(operation) {
 
       let potencia = w/t
 
-      resultado = alert(`Sua Potencia Eletrica é: ${potencia}`)
+      result = alert(`Sua Potencia Eletrica é: ${potencia}`)
     }else if (a === "Tensão" && a === "Corrente"){
       var T = prompt(`Digite a Tensão:`);
       var c = prompt(`Digite a Corrente:`);
 
       let potencia = T * c
 
-      resultado = alert(`Sua Potencia Eletrica é: ${potencia}`)
+      result = alert(`Sua Potencia Eletrica é: ${potencia}`)
     }else if (a === "Tensão" && a === "Resistencia"){
       var T = prompt(`Digite a Tensão:`);
       var r = prompt(`Digite a Resistencia:`);
 
       let potencia = (v * v)/r
 
-      resultado = alert(`Sua Potencia Eletrica é: ${potencia}`)
+      result = alert(`Sua Potencia Eletrica é: ${potencia}`)
     }else if (a === "Resistencia" && a === "Corrente"){
       var r = prompt(`Digite a Resistencia:`);
       var c = prompt(`Digite a Corrente:`);
 
       let potencia = r * (c * c)
 
-      resultado = alert(`Sua Potencia Eletrica é: ${potencia}`)
+      result = alert(`Sua Potencia Eletrica é: ${potencia}`)
     }
 
     break;
@@ -442,9 +443,9 @@ function performCalculation(operation) {
     var a = prompt(`Digite a Potencia: `);
     var b = prompt(`Digite o Tempo: `);
 
-    let w = a * b
+    var w = a * b
 
-    resultado = w
+    result = w
     break;
 
     case "25": //Lei De Ohm
@@ -455,19 +456,19 @@ function performCalculation(operation) {
       var i = prompt(`Digite  a Corrente: `);
 
       let v = r * i
-      resultado = alert(`Sua Tensão é : ${v}`)
+      result = alert(`Sua Tensão é : ${v}`)
     }else if (a === "R"){
       var r = prompt(`Digite a Resistencia: `);
       var v = prompt(`Digite a Tensão: `);
 
       let i = v / r
-      resultado = alert(`Sua Corrente é : ${v}`)
+      result = alert(`Sua Corrente é : ${v}`)
     }else{
-      var v = prompt(`Digite a Tensão: `);
+      var v = prompt(`Digite a Resistencia: `);
       var i = prompt(`Digite  a Corrente: `);
 
       let r = v / i
-      resultado = alert(`Sua Resistencia é : ${r}`)
+      result = alert(`Sua Resistencia é : ${r}`)
     }
     break;
 
@@ -475,7 +476,7 @@ function performCalculation(operation) {
       alert("Operação inválida.");
   }
 
-  // Agora exibimos o resultado fora do switch, apenas se a operação for válida
+  // Agora exibimos o result fora do switch, apenas se a operação for válida
   if (result) {
     alert(result);
   }
