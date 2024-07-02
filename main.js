@@ -51,14 +51,7 @@ function performCalculation(operation) {
         let soma = numeros.reduce((acc, val) => acc + val, 0)
         result = soma/ d;
         alert(`A Media é: ${result.toFixed(2).replace('.', ',')}`);
-        break;
-
-    case "Potencia":
-      var n1 = parseNumberInput(prompt(`Digite o valor da Base:`));
-      var n2 = parseNumberInput(prompt(`Digite o valor do Expoente:`));
-      result = Math.pow(n1, n2);
-      alert(`A potência é: ${result.toFixed(2).replace('.', ',')}`);
-      break;
+    break;
 
     case "Raiz Quadrada":
       var n1 = parseNumberInput(prompt(`Digite o valor:`));
@@ -196,31 +189,32 @@ function performCalculation(operation) {
         var volts = prompt("Digite o numero de volts: ");
         var resistencia = prompt("Digite o numero de resistencia: ");
         var corrente = volts/resistencia;
-          alert(`O Corrente é:
-          ${corrente.toFixed(2).replace('.', ',')}`);
+        result = alert(`O Corrente é: ${corrente.toFixed(2).replace('.', ',')}`);
         break;
 
     case "Volts":
         var resistencia = prompt("Digite o numero de resistencia: ");
         var corrente = prompt("Digite o numero de corrente: ");
         var volts = resistencia * corrente;
-          alert(`O Volts é:
-          ${volts.toFixed(2).replace('.', ',')}`);
+        result = alert(`O Volts é: ${volts.toFixed(2).replace('.', ',')}`);
         break;
     case "Resistencia":
         var Volts = prompt("Digite o numero de Volts: ");
         var corrente = prompt("Digite o numero de corrente: ");
         var resistencia = resistencia/corrente;
-            alert(`O Resistencia é:
-            ${resistencia.toFixed(2).replace('.', ',')}`);
+        result = alert(`O Resistencia é: ${resistencia.toFixed(2).replace('.', ',')}`);
         break;
-    case "Resistencia Total (Numeros Iguais)":
-        var Resistencia = prompt("Digite o numero de Resistencia: ");
-        var Numero = prompt("Digite o numero de Resistor: ");
-        var resistenciatotal = resistencia * Numero;
-            alert(`O Resistencia é:
-            ${resistencia.toFixed(2).replace('.', ',')}`);
-        break;
+    case "Resistencia Total":
+          var numero = parseInt(prompt("Digite o número de resistores: "));
+          var resistenciaTotal = 0;
+      
+          for (var i = 1; i <= numero; i++) {
+              var resistencia = parseFloat(prompt(`Digite o valor da resistência ${i}: `));
+              resistenciaTotal += resistencia;
+          }
+      
+          alert(`A resistência total é: ${resistenciaTotal.toFixed(2).replace('.', ',')}`);
+    break;          
   
     case "Matriz Inversa":
       var aN = parseNumberInput(prompt(`Digite o valor de A:`));
@@ -233,11 +227,11 @@ function performCalculation(operation) {
         var bI = -bN / determinante;
         var cI = -cN / determinante;
         var dI = aN / determinante;
-        alert(`A matriz inversa é:
+        result = alert(`A matriz inversa é:
         ${aI.toFixed(2).replace('.', ',')} ${bI.toFixed(2).replace('.', ',')}
         ${cI.toFixed(2).replace('.', ',')} ${dI.toFixed(2).replace('.', ',')}`);
       } else {
-        alert("A matriz não possui inversa, pois o determinante é zero.");
+        result = alert("A matriz não possui inversa, pois o determinante é zero.");
       }
       break;
 
@@ -255,27 +249,48 @@ function performCalculation(operation) {
       result = `A matriz quadrada é:\n${aq.toFixed(2).replace('.', ',')} ${bq.toFixed(2).replace('.', ',')}\n${cq.toFixed(2).replace('.', ',')} ${dq.toFixed(2).replace('.', ',')}`;
       break;
 
-    case "Sistema Linear":
-    var Types = prompt(`Digite o tipo da matriz (2x2 or 3x3): `);
-
-    if (Types === "2x2") {
-        var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
-        var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
-        var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
-        var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
-
-        var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
-        var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
-
-        var determinante = a1 * a4 - a2 * a3;
-        var Dx = (r1 * a4 - r2 * a2)/determinante;
-        var Dy = (a1 * r2 - a3 * r1)/determinante;
-
-        result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}`;
-    } else {
-        alert("Matriz não suportada. Por favor, insira uma matriz 2x2.");
-    }
-    break;
+      case "Sistema Linear":
+        var Types = prompt(`Digite o tipo da matriz (2x2 ou 3x3): `);
+    
+        if (Types === "2x2") {
+            var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
+            var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
+            var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
+            var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
+    
+            var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
+            var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
+    
+            var determinante = a1 * a4 - a2 * a3;
+            var Dx = (r1 * a4 - r2 * a2) / determinante;
+            var Dy = (a1 * r2 - a3 * r1) / determinante;
+    
+            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}`;
+        } else if (Types === "3x3") {
+            var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
+            var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
+            var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
+            var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
+            var a5 = parseNumberInput(prompt(`Digite o Quinto Valor: `));
+            var a6 = parseNumberInput(prompt(`Digite o Sexto Valor: `));
+            var a7 = parseNumberInput(prompt(`Digite o Sétimo Valor: `));
+            var a8 = parseNumberInput(prompt(`Digite o Oitavo Valor: `));
+            var a9 = parseNumberInput(prompt(`Digite o Nono Valor: `));
+    
+            var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
+            var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
+            var r3 = parseNumberInput(prompt(`Digite o Terceiro Resultado: `));
+    
+            var determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
+            var Dx = ((r1 * a5 * a9) + (a2 * r2 * a8) + (a3 * a6 * r3) - ((a3 * r2 * a9) + (r1 * a6 * a8) + (a2 * a5 * r3))) / determinante;
+            var Dy = ((a1 * r2 * a9) + (r1 * a6 * a8) + (a3 * a4 * r3) - ((a3 * r2 * a8) + (a1 * a4 * r3) + (r1 * a6 * a7))) / determinante;
+            var Dz = ((a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - ((r1 * a5 * a8) + (a2 * a4 * r3) + (a1 * r2 * a7))) / determinante;
+    
+            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')}, Dy é ${Dy.toFixed(2).replace('.', ',')} e Dz é ${Dz.toFixed(2).replace('.', ',')}`;
+      } else {
+            alert("Tipo de matriz inválido. Por favor, digite '2x2' ou '3x3'.");
+      }
+    break;    
 
     case "Expressão":
       var expressao = prompt("Escreva uma expressão");
@@ -302,7 +317,6 @@ alert("Bem-vindo à calculadora!");
 alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Expressão
   - Media
-  - Potencia
   - Raiz Quadrada
   - Raiz Cubica
   - Raiz
@@ -317,7 +331,7 @@ alert(`Tipos de cálculos disponíveis(digite ok para continuar):
   - Corrente
   - Volts
   - Resistencia
-  - Resistencia Total (Numeros Iguais)
+  - Resistencia Total
   - Matriz Inversa
   - Matriz Quadrada
   - Sistema Linear
