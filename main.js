@@ -222,26 +222,48 @@ function performCalculation(operation) {
       }
       break;
 
-    case "20": // Sistema Linear
-      var a1 = parseNumberInput(prompt(`Digite o valor de A1:`));
-      var b1 = parseNumberInput(prompt(`Digite o valor de B1:`));
-      var c1 = parseNumberInput(prompt(`Digite o valor de C1:`));
-      var a2 = parseNumberInput(prompt(`Digite o valor de A2:`));
-      var b2 = parseNumberInput(prompt(`Digite o valor de B2:`));
-      var c2 = parseNumberInput(prompt(`Digite o valor de C2:`));
+     case "20":
+        var Types = prompt(`Digite o tipo da matriz (2x2 ou 3x3): `);
 
-      var determinante = a1 * b2 - a2 * b1;
-      var determinanteX = c1 * b2 - c2 * b1;
-      var determinanteY = a1 * c2 - a2 * c1;
+        if (Types === "2x2") {
+            var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
+            var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
+            var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
+            var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
 
-      if (determinante !== 0) {
-        var x = determinanteX / determinante;
-        var y = determinanteY / determinante;
-        alert(`As soluções para o sistema linear são: X = ${x.toFixed(2).replace('.', ',')} e Y = ${y.toFixed(2).replace('.', ',')}`);
+            var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
+            var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
+
+            var determinante = a1 * a4 - a2 * a3;
+            var Dx = (r1 * a4 - r2 * a2) / determinante;
+            var Dy = (a1 * r2 - a3 * r1) / determinante;
+
+            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}`;
+        } else if (Types === "3x3") {
+            var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
+            var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
+            var a3 = parseNumberInput(prompt(`Digite o Terceiro Valor: `));
+            var a4 = parseNumberInput(prompt(`Digite o Quarto Valor: `));
+            var a5 = parseNumberInput(prompt(`Digite o Quinto Valor: `));
+            var a6 = parseNumberInput(prompt(`Digite o Sexto Valor: `));
+            var a7 = parseNumberInput(prompt(`Digite o Sétimo Valor: `));
+            var a8 = parseNumberInput(prompt(`Digite o Oitavo Valor: `));
+            var a9 = parseNumberInput(prompt(`Digite o Nono Valor: `));
+
+            var r1 = parseNumberInput(prompt(`Digite o Primeiro Resultado: `));
+            var r2 = parseNumberInput(prompt(`Digite o Segundo Resultado: `));
+            var r3 = parseNumberInput(prompt(`Digite o Terceiro Resultado: `));
+
+            var determinante = (a1 * a5 * a9) + (a2 * a6 * a7) + (a3 * a4 * a8) - (a3 * a5 * a7) - (a1 * a6 * a8) - (a2 * a4 * a9);
+            var Dx = ((r1 * a5 * a9) + (a2 * r2 * a8) + (a3 * a6 * r3) - ((a3 * r2 * a9) + (r1 * a6 * a8) + (a2 * a5 * r3))) / determinante;
+            var Dy = ((a1 * r2 * a9) + (r1 * a6 * a8) + (a3 * a4 * r3) - ((a3 * r2 * a8) + (a1 * a4 * r3) + (r1 * a6 * a7))) / determinante;
+            var Dz = ((a1 * a5 * r3) + (a2 * r2 * a7) + (r1 * a4 * a8) - ((r1 * a5 * a8) + (a2 * a4 * r3) + (a1 * r2 * a7))) / determinante;
+
+            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')}, Dy é ${Dy.toFixed(2).replace('.', ',')} e Dz é ${Dz.toFixed(2).replace('.', ',')}`;
       } else {
-        alert("O sistema linear não possui solução única.");
+            alert("Tipo de matriz inválido. Por favor, digite '2x2' ou '3x3'.");
       }
-      break;
+    break;    
 
     case "21": // Sequencia de Cores
       var pergunta = prompt("Quer Descobrir as Cores?(s/n): ")
