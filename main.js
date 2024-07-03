@@ -240,7 +240,7 @@ function performCalculation(operation) {
             var DxD = (r1 * a4 - r2 * a2)/determinante;
             var DyD = (a1 * r2 - a3 * r1)/determinante;
     
-            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')}/${determinante.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}/${determinante.toFixed(2).replace('.', ',')}. Dx Simplificado: ${DxD.toFixed(2).replace('.', ',')}, Dy Simplificado: ${DyD.toFixed(2).replace('.', ',')}`;
+            result = `O Determinante é: ${determinante.toFixed(2).replace('.', ',')}, Dx é ${Dx.toFixed(2).replace('.', ',')} e Dy é ${Dy.toFixed(2).replace('.', ',')}. X é : ${DxD.toFixed(2).replace('.', ',')}, Y é : ${DyD.toFixed(2).replace('.', ',')}`;
         } else if (Types === "3x3") {
             var a1 = parseNumberInput(prompt(`Digite o Primeiro Valor: `));
             var a2 = parseNumberInput(prompt(`Digite o Segundo Valor: `));
