@@ -520,6 +520,47 @@ break;
       }
   
       break;
+
+      case "26":
+
+      var posicao = prompt("Em qual posição está a incógnita? (1 a 4)");
+    
+      // Converte a entrada do usuário para um número inteiro
+      posicao = parseInt(posicao);
+      
+      // Verifica se a posição está dentro do intervalo válido (1 a 4)
+      if (posicao < 1 || posicao > 4 || isNaN(posicao)) {
+          alert("Posição inválida. Por favor, digite um número de 1 a 4.");
+      } else {
+          var a1, a2, a3, a4;
+        
+          // Pede os valores para todas as posições
+          a1 = prompt("Digite o Primeiro Valor:");
+          a2 = prompt("Digite o Segundo Valor:");
+          a3 = prompt("Digite o Terceiro Valor:");
+          a4 = prompt("Digite o Quarto Valor:");
+          
+          // Converte os valores para números antes de multiplicar
+          a1 = parseFloat(a1);
+          a2 = parseFloat(a2);
+          a3 = parseFloat(a3);
+          a4 = parseFloat(a4);
+          
+          // Verifica se a incógnita é 3 ou 4 para ajustar os valores para 1
+          if (posicao === 3 && a3 === 1) {
+              a3 = undefined;
+          } else if (posicao === 4 && a4 === 1) {
+              a4 = undefined;
+          }
+          
+          // Calcula o resultado da multiplicação, ignorando valores undefined
+          var mult = (a1 || 1) * (a4 || 1) / ((a2 || 1) * (a3 || 1));
+  
+          // Exibe o resultado
+          alert(`O seu resultado é ${mult}`);
+      }
+  
+      break;   
   
       default:
         alert("Operação inválida.");
