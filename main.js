@@ -528,6 +528,7 @@ break;
     // Agora exibimos o result fora do switch, apenas se a operação for válida
     if (result) {
       alert(result);
+      window.location.reload();
     }
   }
   
@@ -564,6 +565,7 @@ break;
     - Potencia Eletrica(23)
     - Energia Gasta(24)
     - Lei De Ohm(25)
+    - Sistema Linear Com Variavel(26)
     `);
   
   // Prompt para receber a operação desejada
