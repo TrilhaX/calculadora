@@ -499,6 +499,14 @@ function performCalculation(operation) {
     }
     break;
 
+    case "26": //Classificação SL
+    var a1 = parseInt(prompt("Digite o Primeiro Valor"))
+    var a2 = parseInt(prompt("Digite o Segundo Valor"))
+    var a3 = parseInt(prompt("Digite o Terceiro Valor"))
+    var a4 = parseInt(prompt("Digite o Quarto Valor"))
+    
+    break;
+
     default:
       alert("Operação inválida.");
   }
@@ -542,6 +550,7 @@ alert(`Tipos de cálculos disponíveis(Clique ok para continuar):
   - Potencia Eletrica(23)
   - Energia Gasta(24)
   - Lei De Ohm(25)
+  - Classificação SL(26)
   `);
 
 // Prompt para receber a operação desejada
