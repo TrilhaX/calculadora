@@ -499,19 +499,6 @@ function performCalculation(operation) {
     }
     break;
 
-    case "26": //Classificação SL
-    var a1 = prompt("Digite o Primeiro Valor")
-    var a2 = prompt("Digite o Segundo Valor")
-    var a3 = prompt("Digite o Terceiro Valor")
-    var a4 = prompt("Digite o Quarto Valor")
-
-    var r1 = prompt("Digite o Primeiro Resultado"))
-    var r2 = prompt("Digite o Segundo Resultado"))
-
-    let rf1 = (a1/a3) ~= (a2/a4)
-    alert(rf1)
-    break;
-
     default:
       alert("Operação inválida.");
   }
