@@ -557,15 +557,16 @@ break;
           var mult = (a1 || 1) * (a4 || 1) / ((a2 || 1) * (a3 || 1));
   
           // Exibe o resultado
-          alert(`O seu resultado é ${mult}`);
+          result = alert(`O seu resultado é ${mult}`);
       }
   
       break;   
   
       default:
         alert("Operação inválida.");
+        window.location.reload();
     }
-  
+    window.location.reload();
     // Agora exibimos o result fora do switch, apenas se a operação for válida
     if (result) {
       alert(result);
@@ -617,4 +618,5 @@ break;
     performCalculation(calculo);
   } else {
     alert("Operação cancelada.");
+    window.location.reload();
   }
