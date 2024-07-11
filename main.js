@@ -497,6 +497,7 @@ function performCalculation(operation) {
       let r = v / i
       result = alert(`Sua Resistencia é : ${r}`)
     }
+
     break;
 
     default:
