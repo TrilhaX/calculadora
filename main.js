@@ -563,10 +563,90 @@ break;
       break;
 
       case "27":
+        var tipo = prompt("Qual você deseja calcular? (TRI, HR, R, Q, L, C ou TRA)");
 
-      var triangulo = alert("Se fode")
-  
-      break;  
+        if (tipo === TRI) {
+            // Função para calcular a área de um triângulo escaleno
+            function calcularAreaEscaleno(a, b, c) {
+            var s = (a + b + c) / 2; // Semi-perímetro
+            return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            }
+
+            // Função para calcular a área de um triângulo equilátero
+            function calcularAreaEquilatero(lado) {
+            return (Math.sqrt(3) / 4) * Math.pow(lado, 2);
+            }
+
+            // Função para calcular a área de um triângulo isósceles
+            function calcularAreaIsosceles(base, lado) {
+            var altura = Math.sqrt(Math.pow(lado, 2) - Math.pow(base / 2, 2));
+            return (base * altura) / 2;
+            }
+
+            // Solicita ao usuário o tipo de triângulo
+            var QTRI = prompt("Qual Tipo? (Esc, Equi ou Iso)");
+
+            // Variáveis para armazenar as medidas
+            var areaTriangulo;
+
+            if (QTRI === "Esc") {
+                // Triângulo Escaleno: solicita os três lados
+                var a = parseFloat(prompt("Informe o comprimento do lado A:"));
+                var b = parseFloat(prompt("Informe o comprimento do lado B:"));
+                var c = parseFloat(prompt("Informe o comprimento do lado C:"));
+                areaTriangulo = calcularAreaEscaleno(a, b, c);
+                alert("A área do triângulo escaleno é: " + areaTriangulo.toFixed(2));
+            } else if (QTRI === "Equi") {
+                // Triângulo Equilátero: solicita o comprimento do lado
+                var lado = parseFloat(prompt("Informe o comprimento do lado:"));
+                areaTriangulo = calcularAreaEquilatero(lado);
+                alert("A área do triângulo equilátero é: " + areaTriangulo.toFixed(2));
+            } else if (QTRI === "Iso") {
+                // Triângulo Isósceles: solicita a base e o lado
+                var base = parseFloat(prompt("Informe o comprimento da base:"));
+                var lado = parseFloat(prompt("Informe o comprimento dos lados iguais:"));
+                areaTriangulo = calcularAreaIsosceles(base, lado);
+                alert("A área do triângulo isósceles é: " + areaTriangulo.toFixed(2));
+            } else {
+                alert("Tipo de triângulo inválido. Informe Esc, Equi ou Iso.");
+            }
+
+        } else if (tipo === HR) {
+            // Código para calcular a área de um hexágono regular
+            var s = parseFloat(prompt("Digite o comprimento do lado do hexágono"));
+            var area = (3 * Math.sqrt(3) / 2) * Math.pow(s, 2);
+            alert("A área do seu hexágono regular é: " + area); 
+        } else if (tipo === R) {
+            // Código para calcular R (Retângulo)
+            var largura = parseFloat(prompt("Digite a largura do retângulo:"));
+            var comprimento = parseFloat(prompt("Digite o comprimento do retângulo:"));
+            var areaRetangulo = largura * comprimento;
+            alert("A área do retângulo é: " + areaRetangulo);
+        } else if (tipo === Q) {
+            // Código para calcular Q (Quadrado)
+            var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
+            var areaQuadrado = lado * lado;
+            alert("A área do quadrado é: " + areaQuadrado);
+        } else if (tipo === L) {
+            // Código para calcular L (Língua ou algo específico que você queira adicionar)
+            alert("O tipo L não foi especificado no cálculo.");
+        } else if (tipo === C) {
+            // Código para calcular C (Círculo)
+            var raio = parseFloat(prompt("Digite o raio do círculo:"));
+            var areaCirculo = Math.PI * raio * raio;
+            alert("A área do círculo é: " + areaCirculo);
+        } else if (tipo === TRA) {
+            var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
+            var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
+            var altura = parseFloat(prompt("Digite a altura do trapézio:"));
+            var areaTrapezio = ((baseMaior + baseMenor) * altura) / 2;
+            alert("A área do trapézio é: " + areaTrapezio);
+        } else {
+            alert("Tipo inválido. Por favor, digite um número válido.");
+        }
+
+    break;
+
   
       default:
         alert("Operação inválida.");
