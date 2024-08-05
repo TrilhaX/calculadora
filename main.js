@@ -562,7 +562,7 @@ break;
   
       break;
 
-case "27":
+    case "27":
     var tipo = prompt("Qual você deseja calcular? (TRI, HR, R, Q, L, C ou TRA)");
 
     if (tipo === "TRI") {
@@ -652,7 +652,7 @@ case "27":
             alert("A área do quadrado é: " + areaQuadrado.toFixed(2));
         }
     } else if (tipo === "L") {
-        // Código para calcular L (Língua ou algo específico que você queira adicionar)
+        // Código para tipo L
         alert("O tipo L não foi especificado no cálculo.");
     } else if (tipo === "C") {
         // Código para calcular a área de um círculo
