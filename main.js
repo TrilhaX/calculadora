@@ -565,7 +565,8 @@ break;
     case "27":
     var tipo = prompt("Qual você deseja calcular? (TRI, HR, R, Q, L, C ou TRA)");
 
-    if (tipo === "TRI") {
+    if (tipo == "TRI") {
+        var QTRI = prompt("Qual Tipo? (Esc, Equi ou Iso)");
         // Função para calcular a área de um triângulo escaleno
         function calcularAreaEscaleno(a, b, c) {
             var s = (a + b + c) / 2; // Semi-perímetro
@@ -584,7 +585,7 @@ break;
         }
 
         // Solicita ao usuário o tipo de triângulo
-        var QTRI = prompt("Qual Tipo? (Esc, Equi ou Iso)");
+    
 
         // Variáveis para armazenar as medidas
         var areaTriangulo;
