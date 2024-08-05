@@ -560,7 +560,13 @@ break;
           result = alert(`O seu resultado é ${mult}`);
       }
   
-      break;   
+      break;
+
+      case "27":
+
+      var triangulo = alert("Se fode")
+  
+      break;  
   
       default:
         alert("Operação inválida.");
@@ -608,6 +614,7 @@ break;
     - Energia Gasta(24)
     - Lei De Ohm(25)
     - Sistema Linear Com Variavel(26)
+    - Geometria(27)
     `);
   
   // Prompt para receber a operação desejada
