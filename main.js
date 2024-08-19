@@ -681,85 +681,73 @@ break;
 
     break;
 
-        case "28":
-        var tipo = prompt("Qual figura geométrica? (Círculo, Quadrado, Retângulo, Triângulo, Trapézio, Cubo, Prisma, Cilindro, Cone, Esfera): ").toLowerCase();
+case "28":
+    var tipo = prompt("Qual figura geométrica? (Círculo, Quadrado, Retângulo, Triângulo, Trapézio, Cubo, Prisma, Cilindro, Cone, Esfera): ").toLowerCase();
 
-        var result;
-        var area, volume;
+    var area, volume;
+
+    if (tipo === "círculo") {
+        var raio = parseFloat(prompt("Digite o raio do círculo:"));
+        area = Math.PI * Math.pow(raio, 2);
+        console.log(`A área do círculo é ${area.toFixed(2)}`);
         
-        switch (tipo) {
-            case "círculo":
-                var raio = parseFloat(prompt("Digite o raio do círculo:"));
-                area = Math.PI * Math.pow(raio, 2);
-                result = `A área do círculo é ${area.toFixed(2)}`;
-                break;
-            
-            case "quadrado":
-                var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
-                area = Math.pow(lado, 2);
-                result = `A área do quadrado é ${area.toFixed(2)}`;
-                break;
-            
-            case "retângulo":
-                var largura = parseFloat(prompt("Digite a largura do retângulo:"));
-                var altura = parseFloat(prompt("Digite a altura do retângulo:"));
-                area = largura * altura;
-                result = `A área do retângulo é ${area.toFixed(2)}`;
-                break;
-            
-            case "triângulo":
-                var base = parseFloat(prompt("Digite a base do triângulo:"));
-                var altura = parseFloat(prompt("Digite a altura do triângulo:"));
-                area = (base * altura) / 2;
-                result = `A área do triângulo é ${area.toFixed(2)}`;
-                break;
-            
-            case "trapézio":
-                var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
-                var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
-                var altura = parseFloat(prompt("Digite a altura do trapézio:"));
-                area = ((baseMaior + baseMenor) * altura) / 2;
-                result = `A área do trapézio é ${area.toFixed(2)}`;
-                break;
-            
-            case "cubo":
-                var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
-                volume = Math.pow(lado, 3);
-                result = `O volume do cubo é ${volume.toFixed(2)}`;
-                break;
-            
-            case "prisma":
-                var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
-                var altura = parseFloat(prompt("Digite a altura do prisma:"));
-                volume = baseArea * altura;
-                result = `O volume do prisma é ${volume.toFixed(2)}`;
-                break;
-            
-            case "cilindro":
-                var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
-                var altura = parseFloat(prompt("Digite a altura do cilindro:"));
-                volume = Math.PI * Math.pow(raio, 2) * altura;
-                result = `O volume do cilindro é ${volume.toFixed(2)}`;
-                break;
-            
-            case "cone":
-                var raio = parseFloat(prompt("Digite o raio da base do cone:"));
-                var altura = parseFloat(prompt("Digite a altura do cone:"));
-                volume = (Math.PI * Math.pow(raio, 2) * altura) / 3;
-                result = `O volume do cone é ${volume.toFixed(2)}`;
-                break;
-            
-            case "esfera":
-                var raio = parseFloat(prompt("Digite o raio da esfera:"));
-                volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
-                result = `O volume da esfera é ${volume.toFixed(2)}`;
-                break;
-            
-            default:
-                result = "Figura geométrica não reconhecida.";
-        }
+    } else if (tipo === "quadrado") {
+        var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
+        area = Math.pow(lado, 2);
+        console.log(`A área do quadrado é ${area.toFixed(2)}`);
+        
+    } else if (tipo === "retângulo") {
+        var largura = parseFloat(prompt("Digite a largura do retângulo:"));
+        var altura = parseFloat(prompt("Digite a altura do retângulo:"));
+        area = largura * altura;
+        console.log(`A área do retângulo é ${area.toFixed(2)}`);
+        
+    } else if (tipo === "triângulo") {
+        var base = parseFloat(prompt("Digite a base do triângulo:"));
+        var altura = parseFloat(prompt("Digite a altura do triângulo:"));
+        area = (base * altura) / 2;
+        console.log(`A área do triângulo é ${area.toFixed(2)}`);
+        
+    } else if (tipo === "trapézio") {
+        var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
+        var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
+        var altura = parseFloat(prompt("Digite a altura do trapézio:"));
+        area = ((baseMaior + baseMenor) * altura) / 2;
+        console.log(`A área do trapézio é ${area.toFixed(2)}`);
+        
+    } else if (tipo === "cubo") {
+        var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
+        volume = Math.pow(lado, 3);
+        console.log(`O volume do cubo é ${volume.toFixed(2)}`);
+        
+    } else if (tipo === "prisma") {
+        var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
+        var altura = parseFloat(prompt("Digite a altura do prisma:"));
+        volume = baseArea * altura;
+        console.log(`O volume do prisma é ${volume.toFixed(2)}`);
+        
+    } else if (tipo === "cilindro") {
+        var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
+        var altura = parseFloat(prompt("Digite a altura do cilindro:"));
+        volume = Math.PI * Math.pow(raio, 2) * altura;
+        console.log(`O volume do cilindro é ${volume.toFixed(2)}`);
+        
+    } else if (tipo === "cone") {
+        var raio = parseFloat(prompt("Digite o raio da base do cone:"));
+        var altura = parseFloat(prompt("Digite a altura do cone:"));
+        volume = (Math.PI * Math.pow(raio, 2) * altura) / 3;
+        console.log(`O volume do cone é ${volume.toFixed(2)}`);
+        
+    } else if (tipo === "esfera") {
+        var raio = parseFloat(prompt("Digite o raio da esfera:"));
+        volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
+        console.log(`O volume da esfera é ${volume.toFixed(2)}`);
+        
+    } else {
+        console.log("Figura geométrica não reconhecida.");
+    }
 
-        break;
+    break;
             
       default:
         alert("Operação inválida.");
