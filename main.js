@@ -699,7 +699,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para círculo.");
         }
-        
     } else if (tipo === "quadrado") {
         if (calculo === "área total") {
             var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
@@ -712,7 +711,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para quadrado.");
         }
-        
     } else if (tipo === "retângulo") {
         if (calculo === "área total") {
             var largura = parseFloat(prompt("Digite a largura do retângulo:"));
@@ -727,7 +725,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para retângulo.");
         }
-        
     } else if (tipo === "triângulo") {
         if (calculo === "área total") {
             var base = parseFloat(prompt("Digite a base do triângulo:"));
@@ -743,7 +740,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para triângulo.");
         }
-        
     } else if (tipo === "trapézio") {
         if (calculo === "área total") {
             var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
@@ -761,7 +757,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para trapézio.");
         }
-        
     } else if (tipo === "cubo") {
         if (calculo === "volume") {
             var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
@@ -774,7 +769,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para cubo.");
         }
-        
     } else if (tipo === "prisma") {
         if (calculo === "volume") {
             var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
@@ -790,7 +784,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para prisma.");
         }
-        
     } else if (tipo === "cilindro") {
         if (calculo === "volume") {
             var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
@@ -805,7 +798,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para cilindro.");
         }
-        
     } else if (tipo === "cone") {
         if (calculo === "volume") {
             var raio = parseFloat(prompt("Digite o raio da base do cone:"));
@@ -821,7 +813,6 @@ case "28":
         } else {
             alert("Cálculo não aplicável para cone.");
         }
-        
     } else if (tipo === "esfera") {
         if (calculo === "volume") {
             var raio = parseFloat(prompt("Digite o raio da esfera:"));
@@ -834,12 +825,10 @@ case "28":
         } else {
             alert("Cálculo não aplicável para esfera.");
         }
-        
     } else {
         alert("Figura geométrica não reconhecida.");
     }
     break;
-
             
     default:
         alert("Operação inválida.");
@@ -887,7 +876,8 @@ case "28":
     - Energia Gasta(24)
     - Lei De Ohm(25)
     - Sistema Linear Com Variavel(26)
-    - Geometria(27)
+    - Geometria Parte 1(27)
+    - Geometria Parte 2(28)
     `);
   
   // Prompt para receber a operação desejada
