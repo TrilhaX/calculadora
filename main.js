@@ -831,12 +831,13 @@ case "28":
             var raio = parseFloat(prompt("Digite o raio da esfera:"));
             area = 4 * Math.PI * Math.pow(raio, 2);
             alert(`A área superficial da esfera é ${area.toFixed(2)}`);
-
+        } else {
+            alert("Cálculo não aplicável para esfera.");
+        }
         
     } else {
         alert("Figura geométrica não reconhecida.");
     }
-
     break;
 
             
