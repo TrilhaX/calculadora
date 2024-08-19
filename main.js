@@ -683,65 +683,155 @@ break;
 
 case "28":
     var tipo = prompt("Qual figura geométrica? (Círculo, Quadrado, Retângulo, Triângulo, Trapézio, Cubo, Prisma, Cilindro, Cone, Esfera): ").toLowerCase();
+    var calculo = prompt("O que você deseja calcular? (Área Total, Área Superficial, Volume, Perímetro): ").toLowerCase();
 
-    var area, volume;
+    var area, volume, perimetro;
 
     if (tipo === "círculo") {
-        var raio = parseFloat(prompt("Digite o raio do círculo:"));
-        area = Math.PI * Math.pow(raio, 2);
-        alert(`A área do círculo é ${area.toFixed(2)}`);
+        if (calculo === "área total") {
+            var raio = parseFloat(prompt("Digite o raio do círculo:"));
+            area = Math.PI * Math.pow(raio, 2);
+            alert(`A área total do círculo é ${area.toFixed(2)}`);
+        } else if (calculo === "perímetro") {
+            var raio = parseFloat(prompt("Digite o raio do círculo:"));
+            perimetro = 2 * Math.PI * raio;
+            alert(`O perímetro do círculo é ${perimetro.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para círculo.");
+        }
         
     } else if (tipo === "quadrado") {
-        var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
-        area = Math.pow(lado, 2);
-        alert(`A área do quadrado é ${area.toFixed(2)}`);
+        if (calculo === "área total") {
+            var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
+            area = Math.pow(lado, 2);
+            alert(`A área total do quadrado é ${area.toFixed(2)}`);
+        } else if (calculo === "perímetro") {
+            var lado = parseFloat(prompt("Digite o comprimento do lado do quadrado:"));
+            perimetro = 4 * lado;
+            alert(`O perímetro do quadrado é ${perimetro.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para quadrado.");
+        }
         
     } else if (tipo === "retângulo") {
-        var largura = parseFloat(prompt("Digite a largura do retângulo:"));
-        var altura = parseFloat(prompt("Digite a altura do retângulo:"));
-        area = largura * altura;
-        alert(`A área do retângulo é ${area.toFixed(2)}`);
+        if (calculo === "área total") {
+            var largura = parseFloat(prompt("Digite a largura do retângulo:"));
+            var altura = parseFloat(prompt("Digite a altura do retângulo:"));
+            area = largura * altura;
+            alert(`A área total do retângulo é ${area.toFixed(2)}`);
+        } else if (calculo === "perímetro") {
+            var largura = parseFloat(prompt("Digite a largura do retângulo:"));
+            var altura = parseFloat(prompt("Digite a altura do retângulo:"));
+            perimetro = 2 * (largura + altura);
+            alert(`O perímetro do retângulo é ${perimetro.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para retângulo.");
+        }
         
     } else if (tipo === "triângulo") {
-        var base = parseFloat(prompt("Digite a base do triângulo:"));
-        var altura = parseFloat(prompt("Digite a altura do triângulo:"));
-        area = (base * altura) / 2;
-        alert(`A área do triângulo é ${area.toFixed(2)}`);
+        if (calculo === "área total") {
+            var base = parseFloat(prompt("Digite a base do triângulo:"));
+            var altura = parseFloat(prompt("Digite a altura do triângulo:"));
+            area = (base * altura) / 2;
+            alert(`A área total do triângulo é ${area.toFixed(2)}`);
+        } else if (calculo === "perímetro") {
+            var lado1 = parseFloat(prompt("Digite o comprimento do primeiro lado do triângulo:"));
+            var lado2 = parseFloat(prompt("Digite o comprimento do segundo lado do triângulo:"));
+            var lado3 = parseFloat(prompt("Digite o comprimento do terceiro lado do triângulo:"));
+            perimetro = lado1 + lado2 + lado3;
+            alert(`O perímetro do triângulo é ${perimetro.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para triângulo.");
+        }
         
     } else if (tipo === "trapézio") {
-        var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
-        var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
-        var altura = parseFloat(prompt("Digite a altura do trapézio:"));
-        area = ((baseMaior + baseMenor) * altura) / 2;
-        alert(`A área do trapézio é ${area.toFixed(2)}`);
+        if (calculo === "área total") {
+            var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
+            var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
+            var altura = parseFloat(prompt("Digite a altura do trapézio:"));
+            area = ((baseMaior + baseMenor) * altura) / 2;
+            alert(`A área total do trapézio é ${area.toFixed(2)}`);
+        } else if (calculo === "perímetro") {
+            var baseMaior = parseFloat(prompt("Digite a base maior do trapézio:"));
+            var baseMenor = parseFloat(prompt("Digite a base menor do trapézio:"));
+            var lado1 = parseFloat(prompt("Digite o comprimento de um dos lados não paralelos do trapézio:"));
+            var lado2 = parseFloat(prompt("Digite o comprimento do outro lado não paralelo do trapézio:"));
+            perimetro = baseMaior + baseMenor + lado1 + lado2;
+            alert(`O perímetro do trapézio é ${perimetro.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para trapézio.");
+        }
         
     } else if (tipo === "cubo") {
-        var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
-        volume = Math.pow(lado, 3);
-        alert(`O volume do cubo é ${volume.toFixed(2)}`);
+        if (calculo === "volume") {
+            var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
+            volume = Math.pow(lado, 3);
+            alert(`O volume do cubo é ${volume.toFixed(2)}`);
+        } else if (calculo === "área superficial") {
+            var lado = parseFloat(prompt("Digite o comprimento do lado do cubo:"));
+            area = 6 * Math.pow(lado, 2);
+            alert(`A área superficial do cubo é ${area.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para cubo.");
+        }
         
     } else if (tipo === "prisma") {
-        var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
-        var altura = parseFloat(prompt("Digite a altura do prisma:"));
-        volume = baseArea * altura;
-        alert(`O volume do prisma é ${volume.toFixed(2)}`);
+        if (calculo === "volume") {
+            var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
+            var altura = parseFloat(prompt("Digite a altura do prisma:"));
+            volume = baseArea * altura;
+            alert(`O volume do prisma é ${volume.toFixed(2)}`);
+        } else if (calculo === "área superficial") {
+            var basePerimetro = parseFloat(prompt("Digite o perímetro da base do prisma:"));
+            var baseArea = parseFloat(prompt("Digite a área da base do prisma:"));
+            var altura = parseFloat(prompt("Digite a altura do prisma:"));
+            area = 2 * baseArea + basePerimetro * altura;
+            alert(`A área superficial do prisma é ${area.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para prisma.");
+        }
         
     } else if (tipo === "cilindro") {
-        var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
-        var altura = parseFloat(prompt("Digite a altura do cilindro:"));
-        volume = Math.PI * Math.pow(raio, 2) * altura;
-        alert(`O volume do cilindro é ${volume.toFixed(2)}`);
+        if (calculo === "volume") {
+            var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
+            var altura = parseFloat(prompt("Digite a altura do cilindro:"));
+            volume = Math.PI * Math.pow(raio, 2) * altura;
+            alert(`O volume do cilindro é ${volume.toFixed(2)}`);
+        } else if (calculo === "área superficial") {
+            var raio = parseFloat(prompt("Digite o raio da base do cilindro:"));
+            var altura = parseFloat(prompt("Digite a altura do cilindro:"));
+            area = 2 * Math.PI * raio * (raio + altura);
+            alert(`A área superficial do cilindro é ${area.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para cilindro.");
+        }
         
     } else if (tipo === "cone") {
-        var raio = parseFloat(prompt("Digite o raio da base do cone:"));
-        var altura = parseFloat(prompt("Digite a altura do cone:"));
-        volume = (Math.PI * Math.pow(raio, 2) * altura) / 3;
-        alert(`O volume do cone é ${volume.toFixed(2)}`);
+        if (calculo === "volume") {
+            var raio = parseFloat(prompt("Digite o raio da base do cone:"));
+            var altura = parseFloat(prompt("Digite a altura do cone:"));
+            volume = (Math.PI * Math.pow(raio, 2) * altura) / 3;
+            alert(`O volume do cone é ${volume.toFixed(2)}`);
+        } else if (calculo === "área superficial") {
+            var raio = parseFloat(prompt("Digite o raio da base do cone:"));
+            var altura = parseFloat(prompt("Digite a altura do cone:"));
+            var geratriz = Math.sqrt(Math.pow(raio, 2) + Math.pow(altura, 2));
+            area = Math.PI * raio * (raio + geratriz);
+            alert(`A área superficial do cone é ${area.toFixed(2)}`);
+        } else {
+            alert("Cálculo não aplicável para cone.");
+        }
         
     } else if (tipo === "esfera") {
-        var raio = parseFloat(prompt("Digite o raio da esfera:"));
-        volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
-        alert(`O volume da esfera é ${volume.toFixed(2)}`);
+        if (calculo === "volume") {
+            var raio = parseFloat(prompt("Digite o raio da esfera:"));
+            volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
+            alert(`O volume da esfera é ${volume.toFixed(2)}`);
+        } else if (calculo === "área superficial") {
+            var raio = parseFloat(prompt("Digite o raio da esfera:"));
+            area = 4 * Math.PI * Math.pow(raio, 2);
+            alert(`A área superficial da esfera é ${area.toFixed(2)}`);
+
         
     } else {
         alert("Figura geométrica não reconhecida.");
